@@ -1,0 +1,22 @@
+.navigationPanel{
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    background:rgb(179, 179, 179);
+}
+.navigationPanel .navigationBtn{
+    padding: 10px;
+    text-align: left;
+    color: #300b69;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+ }
+
+ .navigationPanel .navigationBtn:hover{
+    background: rgba(240, 255, 255, 0.61);
+ }
+
+ .navigationPanel .active{
+    background: azure;
+ }
