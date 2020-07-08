@@ -31,3 +31,21 @@
 .mailList .item div span:first-child {
   font-size: 16px;
 }
+.card {
+    display: flex;
+    justify-content: around;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid gray;
+    background-color: yellow;
+  }
+  
+  .task__remove-icon {
+    display: none;
+    margin: 0px 20px;
+  }
+  
+  .card:hover .task__remove-icon {
+    display: block;
+    background-color: blue;
+  }

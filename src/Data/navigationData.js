@@ -13,7 +13,7 @@ export const navigationFolders  = [
         key: 'deleteditems',
     },
     {
-        title: 'Archive',
-        key: 'archive',
+        title: 'Rohit',
+        key: 'rohit',
     },
 ]

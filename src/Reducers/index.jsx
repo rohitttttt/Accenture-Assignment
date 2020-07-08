@@ -1,7 +1,8 @@
 import {
   LOAD_NAVIGATION_FOLDERS_DATA,
   LOAD_MAIL_LIST_DATA,
-  SET_ACTIVE_FOLDER
+  SET_ACTIVE_FOLDER,
+  LOAD_SELECTED_MAIL
 } from "../Constants/action-types";
 
 const initialState = {
@@ -22,7 +23,10 @@ function rootReducer(state = initialState, { payload, type }) {
     }));
 
     state = { ...state, mailFolders };
+  } else if(type === LOAD_SELECTED_MAIL) {
+    state = { ...state, mailPreview: payload };
   }
+
   return state;
 }
 

@@ -1,0 +1,7 @@
+.mailPreviewList {
+    background-color: '#f3eeee';
+    
+  }
+  .mailPreviewList .item {
+   display: flex;
+  }

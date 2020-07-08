@@ -1,0 +1,8 @@
+[
+	{
+		"mId": "guid-10",
+		"unread": false,
+		"subject" : "React Tutorial",
+		"content" : "React is very popular library"
+	}
+]

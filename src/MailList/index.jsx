@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { loadMailList } from "../Actions";
+import { loadMailList,loadSelectedMail } from "../Actions";
 import Inbox_Data from "../Data/inbox.json";
 import "./index.css";
 
@@ -11,8 +11,11 @@ const MailList = () => {
   useEffect(() => {
     dispatch(loadMailList(Inbox_Data));
   }, []);
-
-  const onItemClick = data => {};
+  let selectedmail = null;
+  const onItemClick = data => {
+      selectedmail = data;
+      dispatch(loadSelectedMail(selectedmail));
+  };
   return (
     <div className="mailList">
       {mailList.map(data => (
@@ -25,6 +28,7 @@ const MailList = () => {
           <span>
             {d.getHours()} : {d.getMinutes()}
           </span>
+          <button className='task__remove-icon'>Remove</button>
         </div>
       ))}
     </div>

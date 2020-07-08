@@ -1,12 +1,10 @@
 import {
   LOAD_NAVIGATION_FOLDERS_DATA,
   LOAD_MAIL_LIST_DATA,
-  SET_ACTIVE_FOLDER
+  SET_ACTIVE_FOLDER,
+  LOAD_SELECTED_MAIL
 } from "../Constants/action-types";
 
-export function addArticle(payload) {
-  return { type: "ADD_ARTICLE", payload };
-}
 
 export const loadNavigationData = payload => ({
   type: LOAD_NAVIGATION_FOLDERS_DATA,
@@ -22,3 +20,8 @@ export const setActiveFolder = payload => ({
   type: SET_ACTIVE_FOLDER,
   payload
 });
+
+export const loadSelectedMail = payload => ({
+  type : LOAD_SELECTED_MAIL,
+  payload
+})
