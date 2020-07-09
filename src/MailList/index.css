@@ -49,3 +49,7 @@
     display: block;
     background-color: blue;
   }
+  .filter {
+    text-align : right; 
+    background: hsla(271, 32%, 50%, 0.7)
+  }

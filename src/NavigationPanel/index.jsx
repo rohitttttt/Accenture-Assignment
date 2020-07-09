@@ -5,7 +5,6 @@ import { loadNavigationData, loadMailList, setActiveFolder } from "../Actions";
 import Inbox_Data from "../Data/inbox.json";
 import Spam_Data from "../Data/spam.json";
 import Rohit_Data from "../Data/custom.json";
-import Deleted_Data from '../Data/deleted.json'
 
 import "./index.css";
 
@@ -15,31 +14,25 @@ const getItemCount = key => {
     data = Spam_Data;
   } else if (key === "inbox") {
     data = Inbox_Data;
-  }
-  else if (key === "rohit") {
+  } else if (key === "rohit") {
     data = Rohit_Data;
-  }
-  else if (key === "deleteditems") {
-    data = Deleted_Data;
   }
   return data.filter(item => item.unread).length;
 };
-const NavItem = ({ item: { key, active, title } }) => {
+const NavItem = ({ item: { key, active, title, mailList } }) => {
   const dispatch = useDispatch();
   let data = null;
   const onItemClick = () => {
-    if (key === "spam") {
-      data = Spam_Data;
-    } else if (key === "inbox") {
-      data = Inbox_Data;
-    }
-    else if (key === "rohit") {
+    if (key != "deleteditems" && mailList.length === 0) {
+      if (key === "spam") {
+        data = Spam_Data;
+      } else if (key === "inbox") {
+        data = Inbox_Data;
+      } else if (key === "rohit") {
         data = Rohit_Data;
       }
-      else if (key === "deleteditems") {
-        data = Deleted_Data;
-      }
-    dispatch(loadMailList(data));
+      dispatch(loadMailList(data, key));
+    }
     dispatch(setActiveFolder(key));
   };
   const count = getItemCount(key);
@@ -58,7 +51,11 @@ const NavigationPanel = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     console.log("navigation useEffect !!");
-    dispatch(loadNavigationData(navigationFolders));
+    if (!mailFolders || mailFolders.length === 0) {
+      const record = navigationFolders.find(a => a.key === "inbox");
+      record.mailList = Inbox_Data;
+      dispatch(loadNavigationData(navigationFolders));
+    }
   }, []);
 
   return (

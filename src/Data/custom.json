@@ -2,18 +2,21 @@
 	{
 		"mId": "guid-5",
 		"unread": true,
+        "isFlag": false,
 		"subject" : "Code-A-Thon Program",
 		"content" : "We are delighted to announce Code-A-Thon contest across NA South Market Unit."
 	},
 	{
 		"mId": "guid-6",
 		"unread": false,
+        "isFlag": false,
 		"subject" : "Hackethon- Training",
 		"content" : "We foster our pipeline of future leaders with 47 employee networks and 7 global employee resource groups."
     },
     {
 		"mId": "guid-7",
 		"unread": true,
+        "isFlag": false,
 		"subject" : "DLF3.0 Mandatory Training",
 		"content" : "We foster our pipeline of future leaders with 47 employee networks and 7 global employee resource groups."
 	}

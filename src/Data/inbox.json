@@ -2,12 +2,14 @@
 	{
 		"mId": "guid-1",
 		"unread": true,
+        "isFlag": false,
 		"subject" : "Training Program",
 		"content" : "About Microsoft Virtual Academy<br/>Microsoft Virtual Academy provides free online training by world-class experts to help you build your technical skills."
 	},
 	{
 		"mId": "guid-2",
 		"unread": false,
+        "isFlag": false,
 		"subject" : "Empower your future",
 		"content" : "We foster our pipeline of future leaders with 47 employee networks and 7 global employee resource groups."
 	}

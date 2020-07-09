@@ -5,3 +5,8 @@
   .mailPreviewList .item {
    display: flex;
   }
+ .openmail{
+    flex: 1 1;
+    background: white;
+    color: black;
+}
